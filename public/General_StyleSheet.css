@@ -1,0 +1,173 @@
+body{
+ background-color: rgb(221, 220, 220); 
+}
+
+.title{
+  position:absolute ;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: 2px solid black;
+  color: aliceblue;
+  background-color: black;
+  height: 50px;
+  width: 98.75vw;
+  text-align: center;
+  font-size: 30px;
+  font-family: cursive, Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    overflow: hidden;
+    position: relative;
+    top: 60px;
+    margin: auto;
+    background-color: rgb(221, 220, 220);
+    width: 90vw;
+    height: max-content;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: cursive, Arial, Helvetica, sans-serif ;
+    text-align: center;
+  }
+  
+  .navbar a:hover {
+    background-color: rgb(0, 0, 255);
+    color: rgb(255, 255, 255);
+    font-family: cursive, Arial, Helvetica, sans-serif;
+  }
+
+  .navbar img{
+    float: left;
+    display: block;
+    height: 90px ;
+    width: 90px;
+  }
+  
+  .navbar input[type=text] {
+    width: 300px;
+    float: right;
+    padding: 12px 20px 12px 40px;
+    border: 2px, solid, black;
+    border-radius: 25px;
+    background-image: url('search_bar_icon.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 17px;
+    color: rgb(0, 0, 255);
+  }
+
+  .navbar h1{
+    font-family: cursive, Arial, Helvetica, sans-serif;;
+    font-size: 30px;
+    color: rgb(0, 0, 255);
+  }
+
+  .main{
+    position: relative;
+    top: 40px;
+    margin: auto;
+    height: 100vh;
+    width: 90vw;
+    background-color: aliceblue;
+    
+  }
+/* for fromatting the forms*/
+  header{
+    height: auto;
+    border-bottom: 1px solid rgb(0, 38, 255);
+}
+
+p{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Arial';
+	font-size: 20px;
+	color: rgb(0, 0, 0);
+  padding: 5px;
+}
+
+h1{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Arial';
+	font-size: 30px;
+	color: rgb(0, 0, 0);;
+}
+
+h2{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Arial';
+	font-size: 30px;
+	color: rgb(0, 0, 0);	
+	text-align:center;
+}
+.FormQuestions{
+	text-align:center;
+}
+.FormQuestions label{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Arial';
+	font-size: 20px;
+	color: rgb(0, 0, 0);
+	text-align:center;
+	display:block;
+    margin-top: 10px;
+}
+
+.FormQuestions input{
+	display:block;
+	width: 25%;
+	margin: auto;
+    height: 25px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgb(255, 253, 253);
+    color: rgb(4, 0, 255);
+	font-size: 20px;
+}
+
+button{
+	background-color: rgb(107, 107, 107);
+	border-radius: 12px;
+	font-size: 25px;
+	color:rgb(0, 0, 0);
+    margin: 10px;
+}
+
+button:hover{
+	background-color: rgb(0, 0, 255);
+    color: rgb(255, 255, 255);
+    font-family: cursive, Arial, Helvetica, sans-serif;
+  }
+
+a{
+    text-decoration: none;
+    color: blue ;
+}
+  
+/* for mobile view*/
+@media screen and (max-width: 600px) {
+  .navbar a, .navbar input[type=text] {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+  }
+  .navbar input[type=text] {
+    border: 1px solid #ccc;
+    width: 300px;
+  }
+  .navbar img{
+    float: left;
+    display: block;
+    height: 90px ;
+    width: 90px;
+}
+}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check out</title>
+    <link rel="stylesheet" href="/General_StyleSheet.css">
+</head>
+<body>
+
+    <div class="title"> Book Barn Library </div>
+
+    <nav class ="navbar">
+        <img src="/logo.png" alt="logo">
+        <a href="/">Home</a>
+        <a href="/catalogue">catalogue</a>
+        <a href="/returnBook">Returns</a>
+        <a href="/login">Logout</a>
+    </nav>
+
+    <div class ="main">
+        <h1> Checkout Instructions</h1>
+		<header>
+			<P>Please Fill in the book ID of the book you want to borrow.</P>
+            <P>This information can be found on the catalogue page under the book title.</P>
+		</header>
+        <div class="FormQuestions">
+            <form name= "Checkout" action="/checkout" onsubmit="" method="post">
+                <h2>Book Information</h2>
+                <label for="BookID">Book ID</label>
+                <input type="text" id="BookID" name="BookID" required>
+                <button type ="submit">Submit</button>	
+            </form>
+        </div>
+    </div>
+
+</body>
+</html> 

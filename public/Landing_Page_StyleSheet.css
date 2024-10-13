@@ -1,0 +1,118 @@
+body{
+    background-color: rgb(221, 220, 220); 
+   }
+   
+.title{
+  position:absolute ;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: 2px solid black;
+  color: aliceblue;
+  background-color: black;
+  height: 50px;
+  width: 98.75vw;
+  text-align: center;
+  font-size: 30px;
+  font-family: cursive, Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    overflow: hidden;
+    position: relative;
+    top: 60px;
+    margin: auto;
+    background-color: rgb(221, 220, 220);
+    width: 90vw;
+    height: max-content;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: cursive, Arial, Helvetica, sans-serif ;
+    text-align: center;
+  }
+  
+  .navbar a:hover {
+    background-color: rgb(0, 0, 255);
+    color: rgb(255, 255, 255);
+    font-family: cursive, Arial, Helvetica, sans-serif;
+  }
+
+  .navbar img{
+    float: left;
+    display: block;
+    height: 90px ;
+    width: 90px;
+  }
+  
+  .navbar input[type=text] {
+    width: 300px;
+    float: right;
+    padding: 12px 20px 12px 40px;
+    border: 2px, solid, black;
+    border-radius: 25px;
+    background-image: url('search_bar_icon.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 17px;
+    color: rgb(0, 0, 255);
+  }
+
+  .main{
+    position: relative;
+    top: 60px;
+    padding-top: 20px;
+    margin: auto;
+    height: 100vh;
+    width: 90vw;
+    background-color: aliceblue;  
+  }
+
+  .main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .main h1{
+    text-align: center;
+    color: blue;
+  }
+  
+  .main h2{
+    color: rgb(0, 0, 0);
+  }
+
+  .main h3{
+    color: blue;;
+  }
+
+  @media screen and (max-width: 600px) {
+    .navbar a, .navbar input[type=text] {
+      width: min-content;
+      display: flex;
+      flex-direction: column;
+      margin: 0%;
+    }
+    .navbar input[type=text] {
+      border: 1px solid #ccc;
+      width: 300px;
+    }
+    .navbar img{
+      float: left;
+      display: block;
+      height: 90px ;
+      width: 90px;
+  }
+}

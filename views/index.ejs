@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="/Landing_Page_StyleSheet.css">
+</head>
+<body>
+
+    <div class="title"> Book Barn Library </div>
+
+    <nav class ="navbar">
+        <img src="/logo.png" alt="logo">
+        <a href="/">Home</a>
+        <a href="/catalogue">Catalogue</a>
+        <a href="/login">Logout</a>
+        <a href="/returnBook">Returns</a>
+    </nav>
+
+    <div class ="main">
+        <h1 > Welcome <%= name %> </h1> 
+        <h2>Books Borrowed</h2><hr>
+        <ul>
+            <% userInfo.forEach (section =>{ %>
+                <li>
+                    <h3 >Books borrowed:</h3>
+                    <p><%=section.Book_name%></p>
+
+                    <h3 >Due date:</h3>
+                    <p><%=section.Date_Borrowed %></p>
+
+                    <h3>Date when book was issued:</h3>
+                    <p><%=section.Date_Due %></p>
+                </li>
+            <% }) %>
+        </ul>
+
+        <h2>Billing information</h2><hr>
+        <p>If you are late to return your borrowed books you will have to pay R10 for every day that it is late.</p>
+        <p>You can pay via an EFT. Please ask the libraian for banking details</p>
+        <p>If you would like to return a book please <a href="/returnBook">click here</a><p></p>
+
+    </div>
+
+</body>
+</html>

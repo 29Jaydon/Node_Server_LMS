@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns</title>
+    <link rel="stylesheet" href="/General_StyleSheet.css">
+</head>
+<body>
+
+    <div class="title"> Book Barn Library </div>
+
+    <nav class ="navbar">
+        <img src="/logo.png" alt="logo">
+        <a href="/">Home</a>
+        <a href="/catalogue">catalogue</a>
+        <a href="/returnBook">Returns</a>
+        <a href="/login">Logout</a>
+    </nav>
+
+    <div class ="main">
+        <h1> Return Book Instructions</h1>
+		<header>
+			<P>Please Fill in your Book Details.</P>
+		</header>
+        <div class="FormQuestions">
+            <form name= "returnBook" action="/returnBook"  method="post" enctype="multipart/form-data">
+                <h2>Book Information</h2>
+                <label for="Bookname">Book Title</label>
+                <input type="file" name="ReturnedBook">
+                <button type ="submit">Submit</button>	
+            </form>
+        </div>
+    </div>
+
+</body>
+</html> 

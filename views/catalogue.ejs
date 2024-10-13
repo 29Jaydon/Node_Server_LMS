@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue</title>
+    <link rel="stylesheet" href="/Catalogue_Stylesheet.css">
+</head>
+<body>
+    <div class="title"> Book Barn Library </div>
+
+    <nav class ="navbar">
+        <img src="/logo.png" alt="logo">
+        <a href="/login">Logout</a>
+        <a href="/">Home</a>
+        <a href="/checkout">Check out</a>
+        <a href="/returnBook">Returns</a>
+        <input type="text" placeholder="Search..">
+    </nav>
+
+    <div class ="main">
+        
+        <h1>Classics</h1><hr>
+        <img src="./images/banner1.png" alt="logo">
+        <div class = 'books'>
+            <ul>
+                <% classicBooks.forEach(classicBook =>{ %>
+                    <li>
+                        <h2><%=classicBook.Title %></h2>
+                        <p>Book ID: <%=classicBook.Book_Id %></p>
+                        <p><%=classicBook.Author %></p>
+                        <p><%=classicBook.Book_descr %></p>
+                        <a href="/checkout">Borrow</a> 
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+        
+        
+        <h1>Horror</h1><hr>
+        <img src="./images/banner2.png" alt="logo">
+        <div class = 'books'>
+            <ul>
+                <% horrorBooks.forEach(horrorBook =>{ %>
+                    <li>
+                        <h2><%=horrorBook.Title %></h2>
+                        <p>Book ID: <%=horrorBook.Book_Id %></p>
+                        <p><%=horrorBook.Author %></p>
+                        <p><%=horrorBook.Book_descr %></p>
+                        <a href="/checkout">Borrow</a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+       
+        <h1>Romance</h1><hr>
+        <img src="./images/banner3.png" alt="logo">
+        <div class = 'books'>
+            <ul>
+                <% romanceBooks.forEach(romanceBook =>{ %>
+                    <li>
+                        <h2><%=romanceBook.Title %></h2>
+                        <p>Book ID: <%=romanceBook.Book_Id %></p>
+                        <p><%=romanceBook.Author %></p>
+                        <p><%=romanceBook.Book_descr %></p>
+                        <a href="/checkout">Borrow</a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+      
+        <h1>Childrens Books</h1><hr>
+        <img src="./images/banner4.png" alt="logo">
+        <div class = 'books'>
+            <ul>
+                <% chlidrensBooks.forEach(chlidrensBook =>{ %>
+                    <li>
+                        <h2><%=chlidrensBook.Title %></h2>
+                        <p>Book ID: <%=chlidrensBook.Book_Id %></p>
+                        <p><%=chlidrensBook.Author %></p>
+                        <p><%=chlidrensBook.Book_descr %></p>
+                        <a href="/checkout">Borrow</a>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+ 
+    </div>
+</body>
+</html> 
