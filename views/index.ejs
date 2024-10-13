@@ -20,6 +20,7 @@
 
     <div class ="main">
         <h1 > Welcome <%= name %> </h1> 
+        <h1> Today's Date is: <%= currentDate %> <h1>
         <h2>Books Borrowed</h2><hr>
         <ul>
             <% userInfo.forEach (section =>{ %>
@@ -40,6 +41,12 @@
         <p>If you are late to return your borrowed books you will have to pay R10 for every day that it is late.</p>
         <p>You can pay via an EFT. Please ask the libraian for banking details</p>
         <p>If you would like to return a book please <a href="/returnBook">click here</a><p></p>
+
+        <h1>Your Fines</h1><hr>
+        <h2>Your late fees: 
+            <p style="color: red;"><%= fine %></p>
+        </h2>
+        <br>
 
     </div>
 

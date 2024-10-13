@@ -14,8 +14,9 @@ import cookieParser from "cookie-parser"
 import multer from "multer"
 
 import {initialize} from './passport_config.js'
+import {CurrentDateFormat, calculateFine} from './formatting_CurrentDate.js'
 import {getBooksByGenre, borrowBook, registerUser, getUser_byEmail,
-         getUserID, getUserInfo, getBookTitle} from './database.js'
+         getUserID, getUserInfo, getBookTitle, returnBook} from './database.js'
 
 /************************ Setting Up Middleware ************************/
 
@@ -44,7 +45,6 @@ app.get('/', checkAuthenticated, async(request, response) => {
         const userId = await getUserID(username, email)
         const userInfo = await getUserInfo(userId)
 
-      
         if((typeof(userInfo) === 'undefined')){
 
             const userInfo =[]
@@ -57,24 +57,35 @@ app.get('/', checkAuthenticated, async(request, response) => {
 
             const dueDate = userInfo.Date_Due
             const borrowDate = userInfo.Date_Borrowed
+            const currentDate = CurrentDateFormat()
+            const fine = "You Have No Fines"
 
             response.render('index.ejs', {
                 name: request.user.name,
                  userInfo: userInfo, 
                  dueDate:dueDate, 
-                 borrowDate:borrowDate
+                 borrowDate:borrowDate,
+                 currentDate : currentDate,
+                 fine: fine
                 }) 
                 
         } else {
+
+            const currentDate = CurrentDateFormat()
+            const fine = calculateFine(dueDate, currentDate)
+
             response.render('index.ejs', {
                 name: request.user.name,
                  userInfo: userInfo, 
-                 dueDate:dueDate, 
-                 borrowDate:borrowDate
+                 dueDate: userInfo.Date_Due, 
+                 borrowDate: userInfo.Date_Borrowed,
+                 currentDate : currentDate,
+                 fine: fine
                 }) 
           }
-    } catch {
+    } catch (err) {
         response.redirect('/errorPage')
+        console.log(err)
     }
 })
 
@@ -88,11 +99,11 @@ initialize(
     id => users.find(user => user.id === id)
 )
 
-app.get('/login', checkNotAuthenticated,(request, response) => {
+app.get('/login', (request, response) => {
     response.render('login.ejs')
 })
 
-app.post('/login',checkNotAuthenticated ,passport.authenticate('local',{
+app.post('/login', passport.authenticate('local',{
     successRedirect:'/',
     failureRedirect:'/login',
     failureFlash: true
@@ -183,13 +194,18 @@ app.get('/returnBook',(request, response) => {
     response.render('returns.ejs')
 })
 
-app.post('/returnBook', upload.single('ReturnedBook'), (request, response) => {
+app.post('/returnBook', upload.single('ReturnedBook'), async(request, response) => {
     try {
+        const username = request.user.name
+        const email = request.user.email
+        const bookId = request.body.BookID
+        const userId = await getUserID(username, email)
+        returnBook(userId, bookId)
         response.send('Book has ben returned SUCCESSFULLY')
+
     } catch(err){
         response.redirect('/errorPage')
     }
-   
 })
 
 /********************* Routes for Success/Error pages ********************/

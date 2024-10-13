@@ -35,6 +35,15 @@ export async function borrowBook(User_Id, Book_Id) {
     //return rows.insertId
 }
 
+export async function returnBook(User_Id, Book_Id) {
+    // Making use of a Prepared Statement
+    const [rows] = await pool.query(
+        `INSERT INTO returned_books(Date_returned, Book_Id, User_Id) 
+        VALUES(CURRENT_DATE(),?,?)`, 
+        [Book_Id, User_Id])
+    //return rows.insertId
+}
+
 export async function getUserInfo(User_Id) {
     // Making use of a Prepared Statement
     const [rows] = await pool.query(
